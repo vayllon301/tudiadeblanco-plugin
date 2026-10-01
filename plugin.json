@@ -41,6 +41,7 @@
       },
       "review": {
         "commerce": false,
+        "demo_recording_url": "https://tudiadeblanco.com/reviews/tudiadeblanco-plugin-2.0-review.mp4",
         "test_cases": {
           "positive": [
             {
