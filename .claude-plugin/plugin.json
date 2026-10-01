@@ -1,0 +1,16 @@
+{
+  "name": "tudiadeblanco",
+  "version": "2.0.0",
+  "description": "Manage your wedding through reviewed changes: guests, seating, budget, notes, website, Concierge, documents and inspiration. OAuth connects one wedding at a time.",
+  "author": {
+    "name": "Tu Día de Blanco"
+  },
+  "homepage": "https://tudiadeblanco.com",
+  "keywords": [
+    "wedding",
+    "planning",
+    "rsvp",
+    "seating",
+    "budget"
+  ]
+}

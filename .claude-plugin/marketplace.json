@@ -1,0 +1,14 @@
+{
+  "name": "tudiadeblanco",
+  "owner": { "name": "Tu Día de Blanco" },
+  "metadata": {
+    "description": "Official Tu Día de Blanco plugin: manage your wedding from Claude through reviewed changes."
+  },
+  "plugins": [
+    {
+      "name": "tudiadeblanco",
+      "source": "./",
+      "description": "Plan and run your wedding on Tu Día de Blanco from Claude."
+    }
+  ]
+}

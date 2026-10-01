@@ -1,0 +1,5 @@
+# Standalone MCP fallback. Prefer installing the complete plugin (see ../README.md).
+# Do not add this alongside the plugin: it would create a second connection.
+# Add to ~/.codex/config.toml, then run: codex mcp login tudiadeblanco
+[mcp_servers.tudiadeblanco]
+url = "https://tudiadeblanco.com/mcp"

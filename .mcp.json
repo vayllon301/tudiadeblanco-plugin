@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tudiadeblanco": {
+      "type": "http",
+      "url": "https://tudiadeblanco.com/mcp"
+    }
+  }
+}
