@@ -32,3 +32,7 @@ Budget Currency is a display label (EUR, GBP, USD), without number conversion. R
 Uploads use `prepare_upload` and the Account-bound web form, followed by `get_upload_status`. Do not claim a chat attachment was uploaded without this result. Processing documents are not ready. Uploading a Website image does not add it to a public section automatically.
 
 Reply in the user's language. Keep summaries short and report limitations and errors plainly. See [references/glossary.md](references/glossary.md).
+
+## Language
+
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.

@@ -16,3 +16,7 @@ Read `list_letters`; anonymous authors remain hidden. `mark_letter_read` and `ar
 Read `list_news_posts`. Use `draft_news_post` for a new draft and `update_news_post` to edit, publish, unpublish or schedule an existing Update; `delete_news_post` removes it. Every write needs web approval, and public effects require publication consent. A saved draft never contacts Guests.
 
 For explicitly requested invitations, read and reconcile exact Guest IDs, then use `send_guest_invitations`. It requires communication consent and an Account-authenticated recipient review. Check `get_proposal_status` and `get_communication_status`; accepted, failed and unknown outcomes are distinct from delivery. Never expose invitation tokens or automatically retry unknown attempts.
+
+## Language
+
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.

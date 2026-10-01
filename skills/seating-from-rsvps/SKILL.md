@@ -38,3 +38,7 @@ Requires the `seating` module; `get_seating_plan` must be available. Follow the 
 Start with get_capabilities and follow wedding-workspace. Use apply_seating_batch for reviewed assignments together, including swaps. Capacity or foreign-ID errors roll back everything. Give the approval URL and inspect get_proposal_status before claiming an assignment. New Tables require their own reviewed creation before their IDs can be used. Pending proposals may become stale after that creation; prepare later steps from fresh reads.
 
 A plus-one flag is a planning allowance, not an assigned Guest or reserved seat. Do not create an unnamed Guest or invent a companion policy. Tables support reviewed update and deletion. Check uncertain outcomes before retrying.
+
+## Language
+
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.

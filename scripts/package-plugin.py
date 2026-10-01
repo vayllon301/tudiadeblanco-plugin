@@ -14,6 +14,12 @@ def main() -> None:
         if not 0 < len(interface[field]) <= limit:
             raise ValueError(f"{field} must contain 1–{limit} characters")
 
+    if len(interface.get("defaultPrompt", [])) > 3:
+        raise ValueError("At most three starter prompts are allowed")
+    for field in ("websiteURL", "supportURL", "privacyPolicyURL", "termsOfServiceURL"):
+        if not interface.get(field, "").startswith("https://"):
+            raise ValueError(f"{field} must be an HTTPS URL")
+
     files = {root / "plugin.json", root / "mcp.json"}
     files.update(root.glob("skills/**/*.md"))
     for field in ("logo", "composerIcon", "logoDark", "composerIconDark"):

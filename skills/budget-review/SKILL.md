@@ -36,3 +36,7 @@ Requires the `budget` module. Follow the rules in the `wedding-workspace` skill.
 Start with `get_capabilities` and follow `wedding-workspace`. Writes prepare pending web proposals; give the approval URL and inspect get_proposal_status. Read totals after applied status, never before claiming a save. Check uncertain outcomes before retrying.
 
 Use record_budget_payment for a vendor payment already made. It never charges money. apply_budget_batch reviews up to 100 additions/edits atomically, and export_budget reads paginated rows. Omitted fields stay unchanged. Currency changes labels without converting amounts.
+
+## Language
+
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.
