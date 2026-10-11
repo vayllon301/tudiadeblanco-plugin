@@ -6,10 +6,12 @@ set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
 dist="$root/dist"
-rm -rf "$dist" && mkdir -p "$dist"
+# Replace only the per-skill archives; the plugin ZIP from package-plugin.py stays.
+mkdir -p "$dist"
 
 for skill in "$root"/skills/*/; do
   name="$(basename "$skill")"
+  rm -f "$dist/$name.zip"
   (cd "$root/skills" && zip -qr "$dist/$name.zip" "$name")
   echo "packaged dist/$name.zip"
 done

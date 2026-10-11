@@ -1,6 +1,6 @@
 ---
 name: weekly-check-in
-description: Use when the couple asks for a status update, a weekly check-in, "what should we do next?", or a countdown summary for their wedding on Tu Día de Blanco. Produces a short prioritised briefing from the tudiadeblanco connector without changing anything.
+description: Use when a couple or wedding planner asks for a status update, weekly priorities or a countdown for the connected Tu Día de Blanco Wedding. Produces a briefing without changing anything.
 ---
 
 # Weekly wedding check-in
@@ -9,7 +9,7 @@ This is read-only: don't change anything unless the couple asks afterwards. Foll
 
 ## Steps
 
-1. Call `get_wedding_overview`.
+1. Check `get_capabilities` once per conversation or after a permission error, then call `get_wedding_overview`.
 2. Drill down only where something needs attention:
    - RSVPs: `invited_no_answer` > 0 and the wedding is within 8 weeks → `list_guests` with `rsvp_status: "pending"`.
    - Seating: `confirmed_unseated` > 0 → `get_seating_plan`.
@@ -42,4 +42,4 @@ Keep it to at most five items. End by offering one concrete action, e.g. "¿Quie
 
 ## Language
 
-Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.

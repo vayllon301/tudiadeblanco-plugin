@@ -1,11 +1,11 @@
 ---
 name: budget-review
-description: Use when the couple asks about their wedding budget on Tu Día de Blanco — how much is spent or owed, upcoming or overdue payments, where they're over budget, or recording a quote, deposit or payment. Reads and updates budget lines through the tudiadeblanco connector.
+description: Use when the couple or their planner asks about the wedding budget on Tu Día de Blanco — how much is spent or owed, upcoming or overdue payments, where they're over budget, or recording a quote, deposit or payment. Reads and updates budget lines through the tudiadeblanco connector.
 ---
 
 # Budget review
 
-Requires the `budget` module. Follow the rules in the `wedding-workspace` skill.
+Requires the `budget` module. Check `get_capabilities` once per conversation or after a permission error and follow `wedding-workspace`.
 
 ## Reviewing
 
@@ -29,14 +29,14 @@ Requires the `budget` module. Follow the rules in the `wedding-workspace` skill.
 - `delete_budget_item` is destructive. Confirm first; prefer updating.
 - For a payment, establish whether the supplied amount is a new payment or the cumulative total. `update_budget_item` replaces the cumulative `deposit_paid`; `record_budget_payment` adds a new payment atomically. Ask if the final Cost or payment amount needed for a full-payment update is missing.
 - The connector uses Planned as a fallback when Cost is zero, and treats a Paid state as zero outstanding. This is the confirmed Still due rule; label figures based on Planned as estimates when the agreed Cost is unknown.
-- After changes, call `get_budget` again and show the returned updated totals.
+- After an `applied` result, call `get_budget` again and show persisted totals.
 
-## Review and batches
+## Writes and batches
 
-Start with `get_capabilities` and follow `wedding-workspace`. Writes prepare pending web proposals; give the approval URL and inspect get_proposal_status. Read totals after applied status, never before claiming a save. Check uncertain outcomes before retrying.
+Writes apply immediately and return `status`. Read totals after `applied`, never before claiming a save. On `failed`, report the error and check the affected line before retrying.
 
-Use record_budget_payment for a vendor payment already made. It never charges money. apply_budget_batch reviews up to 100 additions/edits atomically, and export_budget reads paginated rows. Omitted fields stay unchanged. Currency changes labels without converting amounts.
+Use record_budget_payment for a vendor payment already made. It never charges money. apply_budget_batch applies up to 100 additions/edits atomically, and export_budget reads paginated rows. Omitted fields stay unchanged. Currency changes labels without converting amounts.
 
 ## Language
 
-Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses and approval steps in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.
+Support English and Spanish. Reply in the language the user uses, and follow an explicit language preference. Explain statuses in that language. Preserve proper names, user-authored content, IDs, tool names and enum values; do not translate stored content unless requested.
