@@ -2,7 +2,7 @@
 
 Manage your [Tu Día de Blanco](https://tudiadeblanco.com) wedding from Claude or ChatGPT: guests and RSVPs, seating, budget, tasks and notes, the day's schedule, your invitation website, Concierge, documents and Moodboard.
 
-Version **2.2.0** bundles **10 skills** and connects to the remote MCP server at `https://tudiadeblanco.com/mcp`. Couples and wedding planners sign in with OAuth and connect one wedding at a time; current Membership, Module, Role and Side permissions apply on every call.
+Version **2.5.0** bundles **10 skills** and connects to the remote MCP server at `https://tudiadeblanco.com/mcp`. Couples and wedding planners sign in with OAuth and connect one wedding at a time; current Membership, Module, Role and Side permissions apply on every call.
 
 ## Install
 

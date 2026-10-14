@@ -1,4 +1,4 @@
-# Connector 2.2 capabilities
+# Connector 2.3 capabilities
 
 This catalogue describes the source release. Call `get_capabilities` for the deployed connection. Installing the ZIP does not deploy the server.
 
@@ -71,6 +71,11 @@ Writes apply immediately, except `prepare_upload`, which creates a login-bound u
 | `reorder_gift_options` | website | Write | wedding.write, wedding.publish |
 | `create_gallery_image` | website | Write | wedding.write, wedding.publish |
 | `delete_gallery_image` | website | Write | wedding.write, wedding.publish |
+| `get_custom_design_spec` | website | Read | — |
+| `get_custom_design` | website | Read | — |
+| `validate_custom_design` | website | Read | — |
+| `save_custom_design` | website | Write | — |
+| `apply_custom_design` | website | Write | wedding.write, wedding.publish |
 | `get_wedding_domain` | domain | Read | — |
 | `connect_wedding_domain` | domain, Owner only | Write | wedding.write, wedding.publish |
 | `verify_wedding_domain` | domain, Owner only | Write | wedding.write, wedding.publish |
@@ -100,6 +105,7 @@ Writes apply immediately, except `prepare_upload`, which creates a login-bound u
 | `get_proposal_status` | Core | Read | — |
 | `prepare_upload` | Core | Upload ticket | — |
 | `get_upload_status` | Core | Read | — |
+| `report_issue` | Core | Sends a report to the team | — |
 | `apply_budget_batch` | budget | Write | — |
 | `restore_guest` | guests | Write | — |
 | `import_guests` | guests | Write | — |

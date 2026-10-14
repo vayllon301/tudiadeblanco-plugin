@@ -10,7 +10,7 @@ Requires the `seating` module. Check `get_capabilities` once per conversation or
 ## Steps
 
 1. **Gather**:
-   - `get_seating_plan`: tables, capacities, who sits where, and `unseated_confirmed`;
+   - `get_seating_plan`: tables, capacities, who sits where, `unseated_confirmed` and `warnings` (seated Guests not confirmed, companions apart from their host);
    - `list_guests` with `rsvp_status: "confirmed"`, following `next_offset` to null: named companions (`companion_of` is their host Guest's ID) and existing group constraints;
    - dietary/accessibility details only when needed for the user's seating constraints.
 2. **Check capacity.** Every confirmed Guest record, including each named companion, needs one seat. `companions_allowed` is permission to bring people, not a count of people attending. If legacy `plus_one` flags exist without a named companion, identify those hosts from the complete list and allow one extra planning seat each; never count a named companion twice. Compare with `total_seats`. If short, propose the necessary new Tables; `create_table` defaults to 8 seats, round.
@@ -24,7 +24,7 @@ Requires the `seating` module. Check `get_capabilities` once per conversation or
    Ask briefly: one message, bulleted.
 4. **Propose the plan.** Preserve existing seating unless the user asks to redo it. Show names by Table, capacity and any unnamed-companion planning allowances, and get the user's go-ahead in chat. If new Tables are needed, create them first; each result carries the new Table ID.
 5. **Apply the assignments together.** For several moves or swaps, use one `apply_seating_batch` with real Guest/Table IDs from fresh reads. Use `assign_guest_to_table` only for a single assignment. Capacity or foreign-ID errors roll back the batch.
-6. **Verify and report.** Once the status is `applied`, inspect its result and reread `get_seating_plan`. Report persisted assignments, remaining unseated Guests and free Guest-record seats. Keep unnamed-companion allowances distinct from assignments. For stale/failed/unknown outcomes, inspect state before trying again.
+6. **Verify and report.** Once the status is `applied`, inspect its result and reread `get_seating_plan`. Report persisted assignments, remaining unseated Guests, free Guest-record seats and any `warnings` the write returned. Keep unnamed-companion allowances distinct from assignments. For stale/failed/unknown outcomes, inspect state before trying again.
 
 ## Heuristics
 

@@ -13,7 +13,7 @@ Assignees are the Members who owe the work; a Task handed only to the other Side
 
 Task Lists are private named columns of your own Side, never Shared. Use `create_task_list`, `rename_task_list`, `delete_task_list` (its Tasks become unsorted) and `reorder_task_lists` with every List id exactly once. A Task Shared by the other Side may sit in a List you cannot see; it reads as unsorted.
 
-`days_from_wedding` marks a Task whose due date follows the wedding date. Changing the wedding date moves it; setting a due date by hand detaches it.
+`days_from_wedding` is the due date counted from the wedding date (negative before it). `follows_wedding_date` marks a Task whose due date is kept relative to the wedding date: changing the wedding date moves it; setting a due date by hand detaches it.
 
 Planners only: `list_task_templates` reads their templates (Phases, items, timing relative to the wedding, owing Side, Sharing). `apply_task_template` proposes filing one into this Wedding: each Phase becomes or reuses a planner Task List and each item a Task anchored to the wedding date. Applying it again adds the items again, so check `list_tasks` first. Templates are created and edited on the web only.
 

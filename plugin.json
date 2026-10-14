@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tudiadeblanco",
-  "version": "2.2.0",
+  "version": "2.5.0",
   "description": "Manage your wedding from chat: guests, seating, budget, notes, website, Concierge, documents and inspiration. OAuth connects one wedding at a time.",
   "author": {
     "name": "Tu Día de Blanco"
