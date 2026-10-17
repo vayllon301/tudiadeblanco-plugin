@@ -7,7 +7,11 @@
     "name": "Tu Día de Blanco"
   },
   "homepage": "https://tudiadeblanco.com",
+  "repository": "https://github.com/vayllon301/tudiadeblanco-plugin",
+  "documentationUrl": "https://github.com/vayllon301/tudiadeblanco-plugin#readme",
+  "supportUrl": "https://tudiadeblanco.com/support",
   "privacyPolicyUrl": "https://tudiadeblanco.com/legal/privacy",
+  "termsOfServiceUrl": "https://tudiadeblanco.com/legal/terms",
   "license": "MIT",
   "keywords": [
     "wedding",
