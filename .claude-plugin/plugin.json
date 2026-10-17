@@ -7,6 +7,7 @@
     "name": "Tu Día de Blanco"
   },
   "homepage": "https://tudiadeblanco.com",
+  "privacyPolicyUrl": "https://tudiadeblanco.com/legal/privacy",
   "license": "MIT",
   "keywords": [
     "wedding",
@@ -14,5 +15,6 @@
     "rsvp",
     "seating",
     "budget"
-  ]
+  ],
+  "icon": "./.claude-plugin/icon.png"
 }
