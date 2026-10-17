@@ -19,6 +19,5 @@
     "rsvp",
     "seating",
     "budget"
-  ],
-  "icon": "./.claude-plugin/icon.png"
+  ]
 }

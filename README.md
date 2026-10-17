@@ -42,12 +42,9 @@ The plugin contains only skills and a connector reference; it runs no code on yo
 
 See the [Privacy Policy](https://tudiadeblanco.com/legal/privacy) for retention and your rights.
 
-## Build
+## Releases
 
-```sh
-python3 scripts/package-plugin.py   # dist/tudiadeblanco-<version>.zip (ChatGPT/Codex plugin)
-./scripts/package-skills.sh         # dist/<skill>.zip (Claude.ai skill uploads)
-```
+This repository holds what Claude installs. The ChatGPT/Codex package and the per-skill ZIPs for Claude.ai are built from the Tu Día de Blanco source and attached to each [release](https://github.com/vayllon301/tudiadeblanco-plugin/releases).
 
 Use `get_capabilities` to check the release the server is actually running. Support: [tudiadeblanco.com](https://tudiadeblanco.com) · [Privacy](https://tudiadeblanco.com/legal/privacy) · [Terms](https://tudiadeblanco.com/legal/terms).
 
